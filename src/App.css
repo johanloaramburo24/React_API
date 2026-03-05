@@ -10,14 +10,12 @@ body {
 /* --- CONTENEDOR PRINCIPAL --- */
 /* --- CONTENEDOR PRINCIPAL --- */
 .container {
-  text-align: center;
-  padding: 20px 10px; 
-  width: 100%;        /* Cambiado de 100vw a 100% para evitar desbordamiento */
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box; /* Fundamental para que el padding no sume ancho extra */
-  overflow-y: auto; /* Evita el scroll si quieres que todo encaje justo */
+  align-items: center; /* Alinea todo el contenido al centro horizontal */
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
 }
 /* --- TITULO PRINCIPAL --- */
 h1 {
@@ -34,9 +32,9 @@ h1 {
   display: grid;
   /* 4 columnas que se reparten el espacio exacto disponible */
   grid-template-columns: repeat(4, 1fr); 
-  gap: 15px;
-  width: 98%;
-  max-width: 1600%;    /* Asegura que no se salga del contenedor */
+  gap: 50px;
+  width: 95%;
+  max-width: 1400px;    /* Asegura que no se salga del contenedor */
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -53,7 +51,7 @@ h1 {
 }
 
 .card:hover {
-  transform: translate(-10); 
+  transform: translateY(-10); 
   border-color: #c92727;
   z-index: 10; /* Hace que la tarjeta que escalas quede por encima */
 }
@@ -72,6 +70,7 @@ h1 {
 .card h3 {
   font-family: "Bebas Neue", sans-serif;
   background: #c92727;
+  text-align: center;
   color: white;
   font-size: 1.4rem;
   width: 100%;
@@ -86,3 +85,10 @@ h1 {
   margin: 0;
 }
 
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); } /* 2 columnas en tablets */
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; } /* 1 columna en celulares */
+}
