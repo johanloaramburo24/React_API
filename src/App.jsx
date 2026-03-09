@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="container">
       <h1>Lista de Pokémon</h1>
-      <p>Total de cartas de Pokémon: 20 </p>
+      <p className="p">Total de cartas: 20</p>
       {loading ? <p>Cargando...</p> : <PokemonList pokemons={pokemons} />}
     </div>
   );
